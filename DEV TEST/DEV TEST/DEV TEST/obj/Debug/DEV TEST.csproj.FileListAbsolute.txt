@@ -1,0 +1,11 @@
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\obj\Debug\DEV TEST.csprojAssemblyReference.cache
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\obj\Debug\DEV_TEST.Form1.resources
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\obj\Debug\DEV_TEST.Properties.Resources.resources
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\obj\Debug\DEV TEST.csproj.GenerateResource.cache
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\obj\Debug\DEV TEST.csproj.CoreCompileInputs.cache
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\bin\Debug\DEV TEST.exe.config
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\bin\Debug\DEV TEST.exe
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\bin\Debug\DEV TEST.pdb
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\obj\Debug\DEV TEST.exe
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\obj\Debug\DEV TEST.pdb
+C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\DEV TEST\DEV TEST\obj\Debug\DEV TEST.csproj.ResolveComReference.cache
