@@ -17,7 +17,7 @@ namespace DEV_TEST
     {
 
         List<string> listarutas = new List<string>();
-        string ruta = @"C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\CarpetaMonitoreo";
+        string ruta = "";
         string rutaExcel = @"C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\CarpetaMonitoreo\Procesado\";
         string rutaOtros= @"C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\CarpetaMonitoreo\No Aplicable\";
 
@@ -30,12 +30,12 @@ namespace DEV_TEST
         private void Form1_Load(object sender, EventArgs e)
         {
             
-            GetFiles();
+           
         }
 
         private void GetFiles()
             {
-
+            int cont = 1;
 
             lstArchivos.Items.Clear();
             listarutas.Clear();
@@ -45,25 +45,18 @@ namespace DEV_TEST
             {
 
                 string[] extracted = Directory.GetFiles(ruta, found, SearchOption.AllDirectories);
-                int cont=0;
                 foreach (string file in extracted)
                 {
 
                     if (Path.GetFileName(file).Contains(".xlsx"))
                     {
-                        cont++;
-                        clsLogica ex = new clsLogica(ruta + "\\" + Path.GetFileName(file), 1);
-                        string[,] read = ex.ReadRange(1, 1, 100, 5);
-                        ex.close();
+                      
 
-                        clsLogica ex1 = new clsLogica(@"C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\CarpetaMonitoreo\LibroMaestro\LibroMaestro", cont);
-                        ex1.SelectWorksheet(cont);
-                        ex1.WriteRange(1, 1, 100, 5, read);
-                        ex1.createNewSheet();
-                        ex1.save();
-                        ex1.close();
-                        File.Move(file, rutaExcel + Path.GetFileName(file));
-                    
+                        clsLogica ex2 = new clsLogica(ruta + "\\" + Path.GetFileName(file), 1,cont);
+                        ex2.CountRows();
+                           File.Move(file, rutaExcel + Path.GetFileName(file));
+                        cont++;
+
                     }
                     else
                     {
