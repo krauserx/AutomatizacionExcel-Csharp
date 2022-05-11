@@ -18,14 +18,14 @@ namespace DEV_TEST
         Worksheet ws;
         Workbook wb1;
         Worksheet ws1;
+        int cont;
         int cont1;
 
-        public clsLogica(string path,int Sheet)
+        public clsLogica(string path)
         {
             this.path = path;
             wb = excel.Workbooks.Open(path);
-            ws = wb.Worksheets[Sheet];
-
+            cont = wb.Sheets.Count;
         }
 
         public void createNewSheet()
@@ -52,6 +52,9 @@ namespace DEV_TEST
 
         public void CountRows()
         {
+            for (int i = 1; i <= cont; i++)
+            {
+             ws = wb.Worksheets[i];
 
             Range last = ws.Cells.SpecialCells(_Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
             Range rangeX = ws.get_Range("A1",last);
@@ -64,7 +67,9 @@ namespace DEV_TEST
             rangeX.Copy(rangeX1);
 
             createNewSheet();
+            }
             savesAndCloses();
+
         }
 
 

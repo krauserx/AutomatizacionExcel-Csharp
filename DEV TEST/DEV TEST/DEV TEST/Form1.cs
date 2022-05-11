@@ -55,7 +55,7 @@ namespace DEV_TEST
                     if (Path.GetFileName(file).Contains(".xlsx"))
                     {
 
-                        clsLogica ex2 = new clsLogica(ruta + "\\" + Path.GetFileName(file), 1);
+                        clsLogica ex2 = new clsLogica(ruta + "\\" + Path.GetFileName(file));
                         ex2.CountRows();
                         File.Move(file, rutaExcel + Path.GetFileName(file));
                     }
