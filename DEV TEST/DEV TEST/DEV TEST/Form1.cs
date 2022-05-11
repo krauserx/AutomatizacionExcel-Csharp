@@ -33,9 +33,13 @@ namespace DEV_TEST
            
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            buscador();
+        }
+
         private void GetFiles()
-            {
-            int cont = 1;
+        {
 
             lstArchivos.Items.Clear();
             listarutas.Clear();
@@ -50,34 +54,25 @@ namespace DEV_TEST
 
                     if (Path.GetFileName(file).Contains(".xlsx"))
                     {
-                      
 
-                        clsLogica ex2 = new clsLogica(ruta + "\\" + Path.GetFileName(file), 1,cont);
+                        clsLogica ex2 = new clsLogica(ruta + "\\" + Path.GetFileName(file), 1);
                         ex2.CountRows();
-                           File.Move(file, rutaExcel + Path.GetFileName(file));
-                        cont++;
-
+                        File.Move(file, rutaExcel + Path.GetFileName(file));
                     }
                     else
                     {
                         File.Move(file, rutaOtros + Path.GetFileName(file));
 
                     }
-                        
-
-
                     lstArchivos.Items.Add(Path.GetFileName(file));
                     listarutas.Add(file);
-
-
-
                 }
-  
+
+            }
+
         }
 
-    }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
+        public void buscador()
         {
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {

@@ -20,19 +20,35 @@ namespace DEV_TEST
         Worksheet ws1;
         int cont1;
 
-        public clsLogica(string path,int Sheet,int cont)
+        public clsLogica(string path,int Sheet)
         {
             this.path = path;
             wb = excel.Workbooks.Open(path);
             ws = wb.Worksheets[Sheet];
-            cont1 = cont;
+
         }
 
         public void createNewSheet()
         {
-            Worksheet temptsheet = wb.Worksheets.Add(After: ws);
+            Worksheet temptsheet = wb1.Worksheets.Add(After: ws1);
             
         }
+
+        public void openLibroMaestro()
+        {
+            wb1 = excel.Workbooks.Open(@"C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\CarpetaMonitoreo\LibroMaestro\LibroMaestro");
+            cont1 = wb1.Sheets.Count;
+            ws1 = wb1.Worksheets[cont1];
+        }
+
+        public void savesAndCloses()
+        {
+            wb1.Save();
+            wb1.Close(true, Type.Missing, Type.Missing);
+            wb.Close(true, Type.Missing, Type.Missing);
+            excel.Quit();
+        }
+
 
         public void CountRows()
         {
@@ -40,20 +56,15 @@ namespace DEV_TEST
             Range last = ws.Cells.SpecialCells(_Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
             Range rangeX = ws.get_Range("A1",last);
 
-            wb1 = excel.Workbooks.Open(@"C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\CarpetaMonitoreo\LibroMaestro\LibroMaestro");
-            ws1 = wb1.Worksheets[cont1];
+            openLibroMaestro();
 
             Range last1 = ws1.Cells.SpecialCells(_Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
             Range rangeX1 = ws1.get_Range("A1:A1");
 
             rangeX.Copy(rangeX1);
 
-            Worksheet temptsheet1 = wb1.Worksheets.Add(After: ws1);
-            cont1++;
-            wb1.Save();
-            wb1.Close(true, Type.Missing, Type.Missing);
-            wb.Close(true, Type.Missing, Type.Missing);
-            excel.Quit();
+            createNewSheet();
+            savesAndCloses();
         }
 
 
