@@ -40,6 +40,9 @@ namespace DEV_TEST
 
         private void GetFiles()
         {
+            try
+            {
+
 
             lstArchivos.Items.Clear();
             listarutas.Clear();
@@ -68,6 +71,12 @@ namespace DEV_TEST
                     listarutas.Add(file);
                 }
 
+            }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Debe Asignar las rutas correspondientes para que se ejecute correctamente");
             }
 
         }

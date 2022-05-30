@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using _Excel = Microsoft.Office.Interop.Excel;
 
@@ -36,9 +37,12 @@ namespace DEV_TEST
 
         public void openLibroMaestro()
         {
-            wb1 = excel.Workbooks.Open(@"C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\CarpetaMonitoreo\LibroMaestro\LibroMaestro");
-            cont1 = wb1.Sheets.Count;
-            ws1 = wb1.Worksheets[cont1];
+         
+                wb1 = excel.Workbooks.Open(@"C:\Users\kraus\Desktop\Pruebas Genpact\DEV TEST\CarpetaMonitoreo\LibroMaestro\LibroMaestro");
+                cont1 = wb1.Sheets.Count;
+                ws1 = wb1.Worksheets[cont1];
+            
+    
         }
 
         public void savesAndCloses()
